@@ -32,9 +32,13 @@ import java.util.Properties;
 @ComponentScan("com.codegym.cms")
 public class ApplicationConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
 
+    private ApplicationContext applicationContext;
+
     @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+    public void setApplicationContext(ApplicationContext applicationContext) {
+        this.applicationContext = applicationContext;
     }
+
 
     @Bean
     public CustomerRepository customerRepository(){
